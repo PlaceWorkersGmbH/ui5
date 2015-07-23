@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
+ * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(['sap/m/semantic/SemanticButton','sap/m/ButtonType','sap/ui/base/ManagedObject'],function(S,B,M){"use strict";var a=S.extend("sap.m.semantic.SemanticToggleButton",{metadata:{properties:{pressed:{type:"boolean",group:"Data",defaultValue:false}}}});a.prototype.init=function(){this._getControl().addEventDelegate({ontap:this._onTap,onkeydown:this._onKeydown},this);};a.prototype.setProperty=function(p,v,s){if((p==='pressed')&&(v!==this.getPressed())){this._setPressed(v,s);return this;}return S.prototype.setProperty.call(this,p,v,s);};a.prototype.getProperty=function(p){if(p==='pressed'){return this._getPressed();}return S.prototype.getProperty.call(this,p);};a.prototype._onTap=function(e){e.setMarked();if(this.getEnabled()){this.setPressed(!this.getPressed());this.firePress({pressed:this.getPressed()});}};a.prototype._onKeydown=function(e){if(e.which===jQuery.sap.KeyCodes.SPACE||e.which===jQuery.sap.KeyCodes.ENTER){this._onTap(e);}};a.prototype._getPressed=function(){return this._getControl().getType()===B.Emphasized;};a.prototype._setPressed=function(p,s){var b=p?B.Emphasized:B.Default;this._getControl().setType(b,s);};return a;},true);

@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
+ * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(['sap/m/semantic/SemanticControl','sap/m/Button','sap/m/OverflowToolbarButton'],function(S,B,O){"use strict";var a=S.extend("sap.m.semantic.SemanticButton",{metadata:{properties:{enabled:{type:"boolean",group:"Behavior",defaultValue:true}},events:{press:{}}}});a.prototype.setProperty=function(p,v,s){if(!this.getMetadata().getProperties()[p]&&!a.getMetadata().getProperties()[p]&&!S.getMetadata().getProperties()[p]){jQuery.sap.log.error("unknown property: "+p,this);return this;}S.prototype.setProperty.call(this,p,v,s);return this;};a.prototype.getProperty=function(k){return S.prototype.getProperty.call(this,k);};a.prototype._getControl=function(){var c=this.getAggregation('_control');if(!c){var C=this._getConfiguration()&&this._getConfiguration().constraints==="IconOnly"?O:B;var n=new C({id:this.getId()+"-button",press:jQuery.proxy(this.firePress,this)});n.applySettings(this._getConfiguration().getSettings());this.setAggregation('_control',n,true);c=this.getAggregation('_control');}return c;};return a;},true);
