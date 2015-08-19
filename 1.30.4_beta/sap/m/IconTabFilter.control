@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>IconTabFilter</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The filter item class</documentation>
+    <baseType>sap.ui.core/Item</baseType>
+    <properties>
+        <property name="count" type="sap.ui.core/string" defaultValue="" group="Data">
+            <documentation>The number of available items if this filter is applied</documentation>
+        </property>
+        <property name="showAll" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>Enables special visualization for disabled filter (show all items)</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" defaultValue="" group="Misc">
+            <documentation>The icon to display for this item.</documentation>
+        </property>
+        <property name="iconColor" type="sap.ui.core/IconColor" defaultValue="Default" group="Appearance">
+            <documentation>If an icon font is used, the color can be chosen from the icon colors (sap.ui.core.IconColor).
+Possible semantic colors are: Neutral, Positive, Critical, Negative.
+Instead of the semantic icon color the brand color can be used, this is named Default.
+Semantic colors and brand colors should not be mixed up inside one IconTabBar.</documentation>
+        </property>
+        <property name="iconDensityAware" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>By default, this is set to true but then one or more requests are sent trying to get the density perfect version of image if this version of image doesn't exist on the server.
+
+If bandwidth is the key for the application, set this value to false.</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>If set to false, the control is not rendered.</documentation>
+        </property>
+        <property name="design" type="sap.m/IconTabFilterDesign" defaultValue="Vertical" group="Appearance">
+            <documentation>Design for the filter item.</documentation>
+        </property>
+    </properties>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" since="1.15.0" cardinality="0..n">
+            <documentation>The content to show for this item (optional).
+If this content is set, it will be displayed instead of the general content inside the IconTabBar.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Toolbar</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The Toolbar control is a horizontal items container that can be used to get an input from user or just to display output.
+
+Note: By default, when the Toolbar overflows, it provides shrinking for the controls which have percentual width (e.g. Input, Slider) or implement the {@link sap.ui.core.IShrinkable} interface (e.g. Text, Label). This behaviour can be overwritten by providing {@link sap.m.ToolbarLayoutData} for the toolbar items.</documentation>
+    <since>1.16</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>Defines the width of the control.
+By default the Toolbar is block element, if the the width is not explicitly set, control will simply have its own natural size.</documentation>
+        </property>
+        <property name="active" type="sap.ui.core/boolean" defaultValue="false" group="Behavior">
+            <documentation>Indicates that the whole toolbar is clickable. Press event of this control is fired only if this property is set &quot;true&quot;
+Note: This property should be used when there is no interactive control inside the toolbar but to make the toolbar itself interactive.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Sets the enabled property of all controls defined in the content aggregation. Note: This property is not for the toolbar itself. See also the &quot;active&quot; property.</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" defaultValue="" group="Appearance">
+            <documentation>Defines the height of the control.
+Note: By default, the height property depends on the theme and the design property.</documentation>
+        </property>
+        <property name="design" type="sap.m/ToolbarDesign" defaultValue="Auto" group="Appearance" since="1.16.8">
+            <documentation>Defines the toolbar design. Design settings are theme-dependent and can also define the default height of the toolbar.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="press" allowPreventDefault="false">
+            <documentation>If &quot;active&quot; property is set &quot;true&quot; then &quot;press&quot; event is fired when user clicks on the toolbar.</documentation>
+            <parameters>
+                <parameter name="srcControl" type="sap.ui.core/Control">
+                    <documentation>The control which caused the press event within the toolbar.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content of the toolbar.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

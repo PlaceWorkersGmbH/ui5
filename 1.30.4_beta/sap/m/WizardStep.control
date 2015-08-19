@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>WizardStep</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The WizardStep control is an aggregation of the Wizard control.
+This Control is supposed to be used only inside the Wizard, and should not be used as standalone.
+It aggregates the contents, and gives the developer the ability to validate, or invalidate the step.</documentation>
+    <since>1.30</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" defaultValue="" group="Appearance">
+            <documentation>The title to be shown for the WizardStep control</documentation>
+        </property>
+        <property name="validated" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Indicates whether or not the step is valid</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="complete" allowPreventDefault="false">
+            <documentation>This event is fired after the user presses the Next button in the Wizard,
+or on nextStep() method call from the app developer</documentation>
+        </event>
+        <event name="activate" allowPreventDefault="false">
+            <documentation>This event is fired on next step activation from the Wizard</documentation>
+        </event>
+    </events>
+    <aggregations default="content">
+        <aggregation name="content" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>The content of the Wizard Step</documentation>
+        </aggregation>
+        <aggregation name="_editButton" type="sap.m/Button" cardinality="0..1" visibility="hidden">
+            <documentation>The edit button of the WizardStep
+when autoLocking is set to true</documentation>
+        </aggregation>
+    </aggregations>
+</control>

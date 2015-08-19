@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ObjectHeader</name>
+    <derived/>
+    <documentation>ObjectHeader is a display control that enables the user to easily identify a specific object. The object header title is the key identifier of the object and additional text and icons can be used to further distinguish it from other objects.</documentation>
+    <since>1.12</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Misc">
+            <documentation>Object header title</documentation>
+        </property>
+        <property name="number" type="sap.ui.core/string" group="Misc">
+            <documentation>Object header number field</documentation>
+        </property>
+        <property name="numberUnit" type="sap.ui.core/string" group="Misc">
+            <documentation>Object header number units qualifier.</documentation>
+        </property>
+        <property name="intro" type="sap.ui.core/string" group="Misc">
+            <documentation>Introductory text for the object header.</documentation>
+        </property>
+        <property name="introActive" type="sap.ui.core/boolean" group="Misc">
+            <documentation>Indicates that the intro is clickable</documentation>
+        </property>
+        <property name="titleActive" type="sap.ui.core/boolean" group="Misc">
+            <documentation>Indicates that the title is clickable</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" group="Misc">
+            <documentation>Object header icon</documentation>
+        </property>
+        <property name="iconActive" type="sap.ui.core/boolean" group="Misc">
+            <documentation>Indicates that the object header icon is clickable</documentation>
+        </property>
+        <property name="iconAlt" type="sap.ui.core/string" group="Accessibility">
+            <documentation>Object header icon alternative text that is displayed in case the Image is not available, or cannot be displayed.</documentation>
+        </property>
+        <property name="iconDensityAware" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>By default, this is set to true but then one or more requests are sent trying to get the density perfect version of image if this version of image doesn't exist on the server.
+
+If bandwidth is the key for the application, set this value to false.</documentation>
+        </property>
+        <property name="markFavorite" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.16.0">
+            <documentation>Set the favorite state to true or false. The showMarkers property must be true for this property to take effect.</documentation>
+        </property>
+        <property name="markFlagged" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.16.0">
+            <documentation>Set the flagged state to true or false. The showMarkers property must be true for this property to take effect.</documentation>
+        </property>
+        <property name="showMarkers" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.16.0">
+            <documentation>Indicates if object header supports showing markers such as flagged and favorite.</documentation>
+        </property>
+        <property name="showTitleSelector" type="sap.ui.core/boolean" defaultValue="false" group="Misc" since="1.16.0">
+            <documentation>When it is true, the selector arrow icon/image is shown and can be pressed.</documentation>
+        </property>
+        <property name="numberState" type="sap.ui.core/ValueState" defaultValue="None" group="Misc" since="1.16.0">
+            <documentation>Object header number and numberUnit value state.</documentation>
+        </property>
+        <property name="condensed" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>Displays the condensed object header with title, one attribute, number and number unit.</documentation>
+        </property>
+        <property name="backgroundDesign" type="sap.m/BackgroundDesign" defaultValue="Transparent" group="Appearance">
+            <documentation>NOTE: Only applied if you set &quot;condensed=true&quot; or &quot;responsive=true&quot;.
+This property is used to set the background color of the ObjectHeader. Possible values are &quot;Solid&quot;, &quot;Translucent&quot; and &quot;Transparent&quot;.</documentation>
+        </property>
+        <property name="responsive" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.21.1">
+            <documentation>If this property is set to true the ObjectHeader is rendered with a different design and reacts responsively to the screen sizes.
+Be aware that the design and behavior of the responsive ObjectHeader can change without further notification.</documentation>
+        </property>
+        <property name="fullScreenOptimized" type="sap.ui.core/boolean" defaultValue="false" group="Appearance" since="1.28">
+            <documentation>NOTE: Only applied if you set &quot;responsive=true&quot;.
+If this property is set to true, the control occupies the available screen area so that the contents are arranged in a different way to fit in that area.
+If it is set to false, the control is optimized for the master detail view.</documentation>
+        </property>
+        <property name="titleHref" type="sap.ui.core/URI" group="Data" since="1.28">
+            <documentation>The title link target URI. Supports standard hyperlink behavior. If an action should be triggered, this should not be set, but instead an event handler for the &quot;titlePress&quot; event should be registered.</documentation>
+        </property>
+        <property name="titleTarget" type="sap.ui.core/string" group="Behavior" since="1.28">
+            <documentation>Options are _self, _top, _blank, _parent, _search. Alternatively, a frame name can be entered.</documentation>
+        </property>
+        <property name="introHref" type="sap.ui.core/URI" group="Data" since="1.28">
+            <documentation>The intro link target URI. Supports standard hyperlink behavior. If an action should be triggered, this should not be set, but instead an event handler for the &quot;introPress&quot; event should be registered.</documentation>
+        </property>
+        <property name="introTarget" type="sap.ui.core/string" group="Behavior" since="1.28">
+            <documentation>Options are _self, _top, _blank, _parent, _search. Alternatively, a frame name can be entered.</documentation>
+        </property>
+        <property name="titleTextDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance" since="1.28.0">
+            <documentation>This property specifies the title text directionality with enumerated options. By default, the control inherits text direction from the DOM.</documentation>
+        </property>
+        <property name="introTextDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance" since="1.28.0">
+            <documentation>This property specifies the intro text directionality with enumerated options. By default, the control inherits text direction from the DOM.</documentation>
+        </property>
+        <property name="numberTextDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance" since="1.28.0">
+            <documentation>This property specifies the number and unit directionality with enumerated options. By default, the control inherits text direction from the DOM.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="titlePress" allowPreventDefault="false">
+            <documentation>Event is fired when the title is active and the user tap/click on it</documentation>
+            <parameters>
+                <parameter name="domRef" type="sap.ui.core/object">
+                    <documentation>Dom reference of the object header' title to be used for positioning.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="introPress" allowPreventDefault="false">
+            <documentation>Event is fired when the title is active and the user tap/click on it</documentation>
+            <parameters>
+                <parameter name="domRef" type="sap.ui.core/object">
+                    <documentation>Dom reference of the object header' intro to be used for positioning.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="iconPress" allowPreventDefault="false">
+            <documentation>Event is fired when the title icon is active and the user tap/click on it</documentation>
+            <parameters>
+                <parameter name="domRef" type="sap.ui.core/object">
+                    <documentation>Dom reference of the object header' icon to be used for positioning.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event name="titleSelectorPress" since="1.16.0" allowPreventDefault="false">
+            <documentation>Event is fired when the object header title selector (down-arrow) is pressed</documentation>
+            <parameters>
+                <parameter name="domRef" type="sap.ui.core/object">
+                    <documentation>Dom reference of the object header' titleArrow to be used for positioning.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="attributes">
+        <aggregation name="attributes" type="sap.m/ObjectAttribute" cardinality="0..n">
+            <documentation>The list of Object Attributes</documentation>
+        </aggregation>
+        <aggregation name="firstStatus" type="sap.m/ObjectStatus" cardinality="0..1">
+            <documentation>First status shown on the right side of the attributes above the second status.
+If it is not set the first attribute will expand to take the entire row.</documentation>
+            <deprecation since="1.16.0">Use the statuses aggregation instead.</deprecation>
+        </aggregation>
+        <aggregation name="secondStatus" type="sap.m/ObjectStatus" cardinality="0..1">
+            <documentation>Second status shown on the right side of the attributes below the first status.
+If it is not set the second attribute will expand to take the entire row.</documentation>
+            <deprecation since="1.16.0">Use the statuses aggregation instead.</deprecation>
+        </aggregation>
+        <aggregation name="statuses" type="sap.ui.core/Control" since="1.16.0" cardinality="0..n">
+            <documentation>The list of Object sap.ui.core.Control. It will only allow sap.m.ObjectStatus and sap.m.ProgressIndicator controls.</documentation>
+        </aggregation>
+        <aggregation name="_objectNumber" type="sap.m/ObjectNumber" cardinality="0..1" visibility="hidden">
+            <documentation>The object number and unit are managed in this aggregation</documentation>
+        </aggregation>
+        <aggregation name="headerContainer" type="sap.m/ObjectHeaderContainer" since="1.21.1" cardinality="0..1">
+            <documentation>This aggregation takes only effect when you set &quot;responsive&quot; to true.
+It can either be filled with an sap.m.IconTabBar or a sap.suite.ui.commons.HeaderContainer control. Overflow handling must be taken care of by the inner control. If used with an IconTabBar control, only the header will be displayed inside the object header, the content will be displayed below the ObjectHeader.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

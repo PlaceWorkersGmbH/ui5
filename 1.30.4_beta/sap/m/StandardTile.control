@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>StandardTile</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The StandardTile</documentation>
+    <since>1.12</since>
+    <baseType>sap.m/Tile</baseType>
+    <properties>
+        <property name="title" type="sap.ui.core/string" group="Misc">
+            <documentation>Tile title</documentation>
+        </property>
+        <property name="info" type="sap.ui.core/string" group="Misc">
+            <documentation>Tile description</documentation>
+        </property>
+        <property name="icon" type="sap.ui.core/URI" group="Misc">
+            <documentation>Tile icon</documentation>
+        </property>
+        <property name="activeIcon" type="sap.ui.core/URI" group="Misc">
+            <documentation>Tile active icon</documentation>
+        </property>
+        <property name="number" type="sap.ui.core/string" group="Misc">
+            <documentation>Number field</documentation>
+        </property>
+        <property name="numberUnit" type="sap.ui.core/string" group="Misc">
+            <documentation>Number units qualifier</documentation>
+        </property>
+        <property name="infoState" type="sap.ui.core/ValueState" defaultValue="None" group="Misc">
+            <documentation>Info state defines the color of the info text. E.g. Error, Warning, Success...</documentation>
+        </property>
+        <property name="type" type="sap.m/StandardTileType" defaultValue="None" group="Misc">
+            <documentation>Tile type.</documentation>
+        </property>
+        <property name="iconDensityAware" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>By default, this is set to true but then one or more requests are sent trying to get the density perfect version of image if this version of image doesn't exist on the server.
+
+If bandwidth is the key for the application, set this value to false.</documentation>
+        </property>
+    </properties>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+    </associations>
+</control>

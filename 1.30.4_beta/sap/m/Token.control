@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Token</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>renders a token containing text and an optional delete icon</documentation>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="selected" type="sap.ui.core/boolean" defaultValue="false" group="Misc">
+            <documentation>current selection status of token</documentation>
+        </property>
+        <property name="key" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>token's identifier key</documentation>
+        </property>
+        <property name="text" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>token's display text</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>if true, token displays delete icon and fires events accordingly</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance" since="1.28.0">
+            <documentation>This property specifies the text directionality with enumerated options. By default, the control inherits text direction from the DOM.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="delete" allowPreventDefault="false">
+            <documentation>Fired if the user click the token's delete button.</documentation>
+        </event>
+        <event name="press" allowPreventDefault="false">
+            <documentation>Event is fired when the user clicks on the control.</documentation>
+        </event>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Event is fired when the user selects a token (could be a keyboard navigation, could be a press)</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation name="deleteIcon" type="sap.ui.core/Icon" cardinality="0..1" visibility="hidden">
+            <documentation>The delete icon.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CalendarDateInterval</name>
+    <derived/>
+    <documentation>Calendar with dates displayed in one line.</documentation>
+    <since>1.30.0</since>
+    <baseType>sap.ui.unified/Calendar</baseType>
+    <properties>
+        <property name="startDate" type="sap.ui.core/object" group="Misc">
+            <documentation>Start date of the Interval</documentation>
+        </property>
+        <property name="days" type="sap.ui.core/int" defaultValue="7" group="Misc">
+            <documentation>number of days displayed
+on phones the maximum rendered number of days is 8.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Width of Calendar</documentation>
+        </property>
+    </properties>
+</control>

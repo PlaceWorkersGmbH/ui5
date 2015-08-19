@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Title</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Title control is used for header texts and title.</documentation>
+    <since>1.27.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="text" type="sap.ui.core/string" group="Appearance">
+            <documentation>Title Text to be displayed</documentation>
+        </property>
+        <property name="level" type="sap.ui.core/TitleLevel" defaultValue="Auto" group="Appearance">
+            <documentation>Defines the semantic level of the title. Using 'Auto' no explicit level information is written.</documentation>
+        </property>
+        <property name="titleStyle" type="sap.ui.core/TitleLevel" defaultValue="Auto" group="Appearance">
+            <documentation>Sets the style of the Title. Using 'Auto' the style is automatically set based on the current position of the title and the current theming.</documentation>
+        </property>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Defines the width of the Title.</documentation>
+        </property>
+        <property name="textAlign" type="sap.ui.core/TextAlign" defaultValue="Initial" group="Appearance">
+            <documentation>Available alignment settings are &quot;Begin&quot;, &quot;Center&quot;, &quot;End&quot;, &quot;Left&quot;, and &quot;Right&quot;.</documentation>
+        </property>
+    </properties>
+    <associations>
+        <association name="title" type="sap.ui.core/Title" cardinality="0..1">
+            <documentation>Association to a generic title description.
+If such a title element is associated the properties text, level and tooltip (text only) of this element are consumed.
+The corresponding properties of the title control are ignored.</documentation>
+        </association>
+    </associations>
+</control>

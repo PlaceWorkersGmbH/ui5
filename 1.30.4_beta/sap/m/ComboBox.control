@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ComboBox</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The ComboBox control provides a list box with items and a text field allowing the user to either type a value directly into the control or choose from the list of existing items.</documentation>
+    <since>1.22</since>
+    <baseType>sap.m/ComboBoxBase</baseType>
+    <properties>
+        <property name="selectedKey" type="sap.ui.core/string" defaultValue="" group="Data">
+            <documentation>Key of the selected item. If the key has no corresponding item, no changes will apply. If duplicate keys exist, the first item matching the key is used.</documentation>
+        </property>
+        <property name="selectedItemId" type="sap.ui.core/string" defaultValue="" group="Misc">
+            <documentation>Identifier of the selected item. If the identifier has no corresponding item, no changes will apply.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="selectionChange" allowPreventDefault="false">
+            <documentation>Occurs when the user changes the selected item.</documentation>
+            <parameters>
+                <parameter name="selectedItem" type="sap.ui.core/Item">
+                    <documentation>The selected item.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <associations>
+        <association name="selectedItem" type="sap.ui.core/Item" cardinality="0..1">
+            <documentation>Sets or retrieves the selected item from the aggregation named items.</documentation>
+        </association>
+    </associations>
+</control>

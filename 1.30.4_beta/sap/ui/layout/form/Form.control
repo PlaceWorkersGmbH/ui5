@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>form/Form</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Form control.
+Holder for form control to be rendered in a specific form layout.
+A Form supports VariantLayoutData for it's content to allow a simple switching of Layouts.</documentation>
+    <since>1.16.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Width of the form.</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" group="Misc" since="1.20.0">
+            <documentation>Applies a device and theme specific line-height to the form elements if the form has editable content.
+In this case all (not only the editable) rows of the form will get the line height.
+The accessibility aria-readonly attribute is set according to this property.
+The setting of the property has no influence on the editable functionality of the form content.</documentation>
+        </property>
+    </properties>
+    <aggregations default="formContainers">
+        <aggregation name="formContainers" type="sap.ui.layout/form/FormContainer" cardinality="0..n">
+            <documentation>FormContainers with the content of the form.</documentation>
+        </aggregation>
+        <aggregation name="title" type="sap.ui.core/Title" cardinality="0..1">
+            <documentation>Title element of the Form. Can either be a Label object, or a simple string.</documentation>
+        </aggregation>
+        <aggregation name="layout" type="sap.ui.layout/form/FormLayout" cardinality="0..1">
+            <documentation>Layout of the form.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n" since="1.28.0">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+</control>

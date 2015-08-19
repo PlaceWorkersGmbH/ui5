@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>calendar/YearPicker</name>
+    <derived/>
+    <documentation>renders a YearPicker with ItemNavigation
+This is used inside the calendar. Not for stand alone usage</documentation>
+    <since>1.28.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="year" type="sap.ui.core/int" defaultValue="2000" group="Misc">
+            <documentation>The year is initial focused and selected
+The value must be between 0 and 9999</documentation>
+        </property>
+        <property name="years" type="sap.ui.core/int" defaultValue="20" group="Misc" since="1.30.0">
+            <documentation>number of displayed years</documentation>
+        </property>
+        <property name="columns" type="sap.ui.core/int" defaultValue="4" group="Misc" since="1.30.0">
+            <documentation>number of years in each row
+0 means just to have all years in one row, independent of the number</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Month selection changed</documentation>
+        </event>
+    </events>
+    <methods>
+        <method name="nextPage" type="sap.ui.unified/calendar/YearPicker">
+            <documentation>displays the next page</documentation>
+        </method>
+        <method name="previousPage" type="sap.ui.unified/calendar/YearPicker">
+            <documentation>displays the previous page</documentation>
+        </method>
+    </methods>
+</control>

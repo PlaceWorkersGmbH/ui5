@@ -21,6 +21,13 @@ If you want to use an older version, use a script-tag like this:
     <script src="/resources/1.24.6/sap-ui-core.js"
     ...
 
+## Add a new version
+
+Copy the named folder into the repository and set new symlinks like this:
+
+    ln -sf ./1.28.16 ./latest
+    ln -sf ./1.30.4_beta ./latest-beta 
+
 ## Speed up the deploy process
 
 To speed up the deploy process it can be usefull to remove unnecessary debug-files from the folders. On this way you can shrink the file size down to ~ 50% of the original size. Navigate to the concerned folder and use the following command: 

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>Column</name>
+    <derived/>
+    <documentation>The column allows to define column specific properties that will be applied when rendering the table.</documentation>
+    <baseType>sap.ui.core/Element</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Width of the column.</documentation>
+        </property>
+        <property name="flexible" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Is the width of the column flexible (grows on resize)?</documentation>
+        </property>
+        <property name="resizable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Is the column resizable or not?</documentation>
+        </property>
+        <property name="hAlign" type="sap.ui.core/HorizontalAlign" defaultValue="Begin" group="Appearance">
+            <documentation>Horizontal alignment of the column content. Controls with a text align do not inherit the horizontal alignment. You have to set the text align directly on the template.</documentation>
+        </property>
+        <property name="sorted" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>flag, if the column is sorted or not (displays the sorting indicator, does not trigger the sort method!)</documentation>
+        </property>
+        <property name="sortOrder" type="sap.ui.table/SortOrder" defaultValue="Ascending" group="Appearance">
+            <documentation>Sort order for this column.</documentation>
+        </property>
+        <property name="sortProperty" type="sap.ui.core/string" group="Behavior">
+            <documentation>Specifies the binding property on which the column will sort.</documentation>
+        </property>
+        <property name="filtered" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>flag, if the column is filtered or not (displays the filter indicator, does not trigger the filter method!)</documentation>
+        </property>
+        <property name="filterProperty" type="sap.ui.core/string" group="Behavior">
+            <documentation>Specifies the binding property on which the column will filter.</documentation>
+        </property>
+        <property name="filterValue" type="sap.ui.core/string" group="Behavior">
+            <documentation>Specifies the value of the filter as string (will be converted into the propert data type).</documentation>
+        </property>
+        <property name="filterOperator" type="sap.ui.core/string" group="Behavior">
+            <documentation>Filter operator to use when filtering this column.</documentation>
+        </property>
+        <property name="grouped" type="sap.ui.core/boolean" defaultValue="false" group="Appearance">
+            <documentation>flag, if the column is grouped or not (hides the column!)</documentation>
+        </property>
+        <property name="visible" type="sap.ui.core/boolean" defaultValue="true" group="Appearance">
+            <documentation>Invisible controls are not rendered.</documentation>
+        </property>
+        <property name="filterType" type="sap.ui.core/any" group="Misc" since="1.9.2">
+            <documentation>Type of Filter. This is used to transform the search term to the specified type, to make sure that the right columns are displayed. This should be the same as defined in binding for this column. As alternative you can pass a function which does the conversion. The function receives the entered filter value as parameter and returns the proper value for the filter expression. Another option is to pass the classname of the type, e.g.: sap.ui.model.type.Date or an expression similar to the binding syntax, e.g.: &quot;\{type: 'sap.ui.model.type.Date', formatOptions: \{UTC: true\}, constraints: {} \}&quot;. Here the escaping is mandatory to avoid handling by the binding parser. By default the filter type is sap.ui.model.type.String.</documentation>
+        </property>
+        <property name="name" type="sap.ui.core/string" group="Appearance" since="1.11.1">
+            <documentation>The name of the column which is used in the column visibility menu item as text. If not set as fallback the column menu tries to get the text from the nested Label.</documentation>
+        </property>
+        <property name="showFilterMenuEntry" type="sap.ui.core/boolean" defaultValue="true" group="Appearance" since="1.13.0">
+            <documentation>Define if the filter menu entry is displayed</documentation>
+        </property>
+        <property name="showSortMenuEntry" type="sap.ui.core/boolean" defaultValue="true" group="Appearance" since="1.13.0">
+            <documentation>Define if the sort menu entries are displayed</documentation>
+        </property>
+        <property name="headerSpan" type="sap.ui.core/any" defaultValue="1" group="Behavior">
+            <documentation>If this property is set a span is applied for the header. When moving columns all columns which are part of the header will be moved. This can be either an integer or an array of integers (if you use the multi header feature of the table). If you only specify an integer this span is applied for all header rows, with multiple integers you can specify a seperate span for each header row.</documentation>
+        </property>
+        <property name="autoResizable" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.21.1">
+            <documentation>Enables auto-resizing of the column on doubleclicking the resizer. Currently only implemented to work with the following controls: sap.m.Text, sap.m.Label, sap.m.Link , sap.m.Input, sap.ui.commons.TextView, sap.ui.commons.Label, sap.ui.commons.Link and sap.ui.commons.TextField, sap.ui.commons.Checkbox, sap.m.Checkbox</documentation>
+        </property>
+        <property name="defaultFilterOperator" type="sap.ui.core/string" group="Behavior">
+            <documentation>If this property is set the default filter operator of the column is overwritten.
+By default &quot;Contains&quot; is used for string and &quot;EQ&quot; for other types. A valid sap.ui.model.FilterOperator needs to be passed.</documentation>
+        </property>
+    </properties>
+    <aggregations default="label">
+        <aggregation name="label" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Label (header renderer) of the column which is displayed in the column header. Define a control for each header row in the table. This aggregation is for the standard behaviour, if you only want to display one single row header.</documentation>
+        </aggregation>
+        <aggregation name="multiLabels" type="sap.ui.core/Control" since="1.13.1" cardinality="0..n">
+            <documentation>Labels (header renderer) of the column which are displayed in the column header. Define a control for each header row in the table. Use this aggregation, if you want to use multiple headers per column.</documentation>
+        </aggregation>
+        <aggregation name="template" type="sap.ui.core/Control" cardinality="0..1">
+            <documentation>Template (cell renderer) of this column. A template is decoupled from the column which means after changing the templates' properties or aggregations an explicit invalidation of the column or table is required. The default is: sap.ui.commons.TextView.</documentation>
+        </aggregation>
+        <aggregation name="menu" type="sap.ui.unified/Menu" cardinality="0..1">
+            <documentation>The menu used by the column. By default the {@link sap.ui.table.ColumnMenu} is used.</documentation>
+        </aggregation>
+    </aggregations>
+    <methods>
+        <method name="toggleSort" type="sap.ui.table/Column">
+            <documentation>toggles the sort order of the column</documentation>
+            <deprecation since="1.5.1">Please use the function &quot;sap.ui.Table.prototype.sort&quot;.</deprecation>
+        </method>
+        <method name="sort" type="sap.ui.table/Column">
+            <documentation>sorts the current column ascending or descending</documentation>
+            <deprecation since="1.5.1">Please use the function &quot;sap.ui.Table.prototype.sort&quot;.</deprecation>
+            <parameters>
+                <parameter name="descending" type="sap.ui.core/boolean">
+                    <documentation>sort order of the column (if undefined the default will be ascending)</documentation>
+                </parameter>
+            </parameters>
+        </method>
+    </methods>
+</control>

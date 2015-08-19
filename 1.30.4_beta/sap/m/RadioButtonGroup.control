@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>RadioButtonGroup</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This control is used as a wrapper for a group of RadioButton controls, which then can be used as a single UI element.
+You can select only one of the grouped radio buttons at a time. Some of the radio buttons can be configured as inactive (they are displayed as grayed out).
+The grouped radio buttons can be arranged within different number of columns.
+Based on the number of specified columns and the number of radio buttons used, different layout types can be achieved - as a 'matrix', horizontally or vertically aligned radio buttons, etc.</documentation>
+    <since>1.25.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="width" type="sap.ui.core/CSSSize" group="Dimension">
+            <documentation>Width of the RadioButtonGroup.</documentation>
+        </property>
+        <property name="columns" type="sap.ui.core/int" defaultValue="1" group="Appearance">
+            <documentation>Number of RadioButtons displayed in one line/column.</documentation>
+        </property>
+        <property name="editable" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Specifies whether the user can select the RadioButtonGroup. When the property is set to false, the control obtains visual styles different from its visual styles for the normal and the disabled state. Additionally the control is no longer interactive, but can receive focus.</documentation>
+        </property>
+        <property name="valueState" type="sap.ui.core/ValueState" defaultValue="None" group="Data">
+            <documentation>Тhe value state to be displayed for the radiobutton. Possible values are: Error, Warning, Success and None.
+Note: Setting this attribute to sap.ui.core.ValueState.Error when the accessibility feature is enabled,
+sets the value of the invalid propery for the whole radiobutton group to “true”.</documentation>
+        </property>
+        <property name="selectedIndex" type="sap.ui.core/int" defaultValue="0" group="Data">
+            <documentation>Index of the selected/checked RadioButton.</documentation>
+        </property>
+        <property name="enabled" type="sap.ui.core/boolean" defaultValue="true" group="Behavior">
+            <documentation>Switches the enabled state of the control. All Radio Buttons inside a disabled group are disabled. Default value is “true”.</documentation>
+        </property>
+        <property name="textDirection" type="sap.ui.core/TextDirection" defaultValue="Inherit" group="Appearance" since="1.28.0">
+            <documentation>This property specifies the element's text directionality with enumerated options. By default, the control inherits text direction from the DOM.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="select" allowPreventDefault="false">
+            <documentation>Event is fired when selection is changed by user interaction.</documentation>
+            <parameters>
+                <parameter name="selectedIndex" type="sap.ui.core/int">
+                    <documentation>Index of the selected RadioButton.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="buttons">
+        <aggregation name="buttons" type="sap.m/RadioButton" cardinality="0..n" bindable="bindable">
+            <documentation>returns a list of the RadioButtons in a RadioButtonGroup</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association name="ariaDescribedBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+        <association name="ariaLabelledBy" type="sap.ui.core/Control" cardinality="0..n">
+            <documentation>Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+    </associations>
+    <methods>
+        <method name="setSelectedButton" type="sap.ui.core/void">
+            <documentation>Sets the button as selected and removes the selection from the previous one.</documentation>
+            <parameters>
+                <parameter name="button" type="sap.m/RadioButton">
+                    <documentation>Selected button.</documentation>
+                </parameter>
+            </parameters>
+        </method>
+        <method name="getSelectedButton" type="sap.m/RadioButton">
+            <documentation>Returns selected button. When no button is selected, &quot;null&quot; is returned.</documentation>
+        </method>
+    </methods>
+</control>

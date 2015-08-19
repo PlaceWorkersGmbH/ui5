@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>calendar/Header</name>
+    <derived/>
+    <documentation>renders a calendar header
+This is used inside the calendar. Not for stand alone usage</documentation>
+    <since>1.28.0</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property name="textButton1" type="sap.ui.core/string" group="Misc">
+            <documentation>Text of the first button (normally month)</documentation>
+        </property>
+        <property name="ariaLabelButton1" type="sap.ui.core/string" group="Misc">
+            <documentation>aria-label of the first button (normally month)</documentation>
+        </property>
+        <property name="textButton2" type="sap.ui.core/string" group="Misc">
+            <documentation>Text of the second button (normally year)</documentation>
+        </property>
+        <property name="ariaLabelButton2" type="sap.ui.core/string" group="Misc">
+            <documentation>aria-label of the second button (normally year)</documentation>
+        </property>
+        <property name="enabledPrevious" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>enables the previous button</documentation>
+        </property>
+        <property name="enabledNext" type="sap.ui.core/boolean" defaultValue="true" group="Misc">
+            <documentation>enables the Next button</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="pressPrevious" allowPreventDefault="false">
+            <documentation>previous button pressed</documentation>
+        </event>
+        <event name="pressNext" allowPreventDefault="false">
+            <documentation>next button pressed</documentation>
+        </event>
+        <event name="pressButton1" allowPreventDefault="false">
+            <documentation>first button pressed (normally month)</documentation>
+        </event>
+        <event name="pressButton2" allowPreventDefault="false">
+            <documentation>second button pressed (normally year)</documentation>
+        </event>
+    </events>
+</control>

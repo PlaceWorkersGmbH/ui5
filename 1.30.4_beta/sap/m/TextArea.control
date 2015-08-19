@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>TextArea</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Enable users to input multi-line text.</documentation>
+    <since>1.9.0</since>
+    <baseType>sap.m/InputBase</baseType>
+    <properties>
+        <property name="rows" type="sap.ui.core/int" defaultValue="2" group="Appearance">
+            <documentation>Specifies the height of the text area (in lines).</documentation>
+        </property>
+        <property name="cols" type="sap.ui.core/int" defaultValue="20" group="Appearance">
+            <documentation>Specifies the width of the textarea (in average character width).</documentation>
+        </property>
+        <property name="height" type="sap.ui.core/CSSSize" group="Appearance">
+            <documentation>Defines the height of the textarea with CSS. This property can overwrite the rows property.</documentation>
+        </property>
+        <property name="maxLength" type="sap.ui.core/int" defaultValue="0" group="Behavior">
+            <documentation>Maximum number of characters that user can input. If your value property's length bigger than maxLength then value is not truncated and user can see whole value property but cannot write anymore.</documentation>
+        </property>
+        <property name="wrapping" type="sap.ui.core/Wrapping" group="Behavior">
+            <documentation>The wrap attribute specifies how the text in a text area is to be wrapped when submitted in a form. Possible values are: Soft, Hard, Off.</documentation>
+        </property>
+        <property name="valueLiveUpdate" type="sap.ui.core/boolean" defaultValue="false" group="Behavior" since="1.30">
+            <documentation>Indicates when the value gets updated with the user changes: At each keystroke (true) or first when the user presses enter or tabs out (false).</documentation>
+        </property>
+    </properties>
+    <events>
+        <event name="liveChange" allowPreventDefault="false">
+            <documentation>This event is fired when the value of the input is changed - e.g. at each keypress</documentation>
+            <parameters>
+                <parameter name="value" type="sap.ui.core/string">
+                    <documentation>The new value of the textarea.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+</control>
