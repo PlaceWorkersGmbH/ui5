@@ -25,8 +25,15 @@ If you want to use an older version, use a script-tag like this:
 
 Copy the named folder into the repository and set new symlinks like this:
 
-    ln -sf ./1.28.16 ./latest
-    ln -sf ./1.30.4_beta ./latest-beta 
+    cd 1.30.9/
+    find !(resources) -delete
+    mv -v ./resources/* ./
+    rm -rf resources
+    find . -type f -name "*-dbg.js" -delete
+
+    cd ..
+    ln -sf ./latest
+    ln -sf ./1.30.9 ./latest
 
 ## Speed up the deploy process
 
